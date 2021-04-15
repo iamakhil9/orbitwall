@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {useState,useEffect} from 'react'
+import axios from 'axios'
+import Homepage from './Homepage'
 function App() {
+  const  [user, setUser] = useState([])
+  const  [userinfo, setUserInfo] = useState({})
+  const usersData =  async() =>{
+ try{
+   const res=await axios.get('https://panorbit.in/api/users.json');
+   setUser(res.data.users);
+   console.log(res.data.users)
+ }
+ catch(error){
+   console.log(error);
+   }
+  }
+  useEffect(()=> {usersData();},[])
+  // user[0] gives the list of users from API
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+    
+      <Homepage u={user[1]} />
     </div>
   );
 }
