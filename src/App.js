@@ -4,26 +4,26 @@ import axios from 'axios'
 import Homepage from './Homepage'
 function App() {
   const  [user, setUser] = useState([])
-  const  [userinfo, setUserInfo] = useState({})
+  const  [userinfo, setUserInfo] = useState([])
   const usersData =  async() =>{
  try{
    const res=await axios.get('https://panorbit.in/api/users.json');
-   setUser(res.data.users);
-   console.log(res.data.users)
+  //  setUser(arr => [...arr,res.data.users])
+  setUser(res.data.users)
+  //  console.log(res.data.users)
  }
  catch(error){
    console.log(error);
    }
   }
   useEffect(()=> {usersData();},[])
-  // user[0] gives the list of users from API
-  
-  
+  // const l = user.map((item)=>{return console.log(item.id)}) 
+  // console.log(user)
   return (
     <div className="App">
       
-    
-      <Homepage u={user[1]} />
+      {/* <div>{u1}</div> */}
+      <Homepage myUser={user} />
     </div>
   );
 }
