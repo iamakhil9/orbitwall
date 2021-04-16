@@ -53,7 +53,7 @@ svg{
 	color: #d2d2d2;
 }
 .list li{
-	padding: 20px;
+	padding: 5px 30px 5px 30px;
 	background: white;
 	list-style: none;
 	overflow: auto;
@@ -63,9 +63,17 @@ svg{
 	height: 400px;
 	overflow: auto; 
 }
+.flexing{
+	display: flex;
+	flex-direction: row;
+}
 .names{
 font-size: larger;
+padding-top: 10px;
+    font-weight: bold;
+    color: gray;
 } 
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -78,6 +86,6 @@ font-size: larger;
 	height: 30px;
 	width: 30px;
 	border-radius: 50%;
-	padding: 5px;
+	padding: 7px;
 }
 

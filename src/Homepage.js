@@ -22,7 +22,7 @@ export default function Homepage(props) {
             Select an account
         </div >
         <ul className='list'>
-            {users.map((item)=>{return <li><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div><hr></hr></li>})}
+            {users.map((item)=>{return <li><div className='flexing'><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div></div><hr></hr></li>})}
         </ul>
     
     </div>
