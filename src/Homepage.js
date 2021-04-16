@@ -1,11 +1,14 @@
  import './App.css';
-
+import {useState} from 'react'
+import {users} from './users'
 //  importing array of users from app.js as user
 export default function Homepage(props) {
-    const user =props.u;
-    console.log(props.u)
+    const [newUser,setNewUser]=useState([])
+    const users =props.myUser;
+    console.log(users)
     // const displaylist=()=>{ return props.user.map((item)=>{console.log(item.id)})}
     // displaylist();
+    // const l = users.map((item)=>{return <li>item.id</li>})
     return (
         <div>
             <div className='container'>
@@ -19,15 +22,7 @@ export default function Homepage(props) {
             Select an account
         </div >
         <ul className='list'>
-            <li>users<hr></hr></li>
-            <li>user</li>
-            <li>users.</li>
-            <li>users.</li>
-            <li>users.</li>
-            <li>users.</li>
-            <li>users.</li>
-            <li>users.</li>
-            <li>users.</li>
+            {users.map((item)=>{return <li><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div><hr></hr></li>})}
         </ul>
     
     </div>
