@@ -1,6 +1,5 @@
  import './App.css';
 import {useState} from 'react'
-import {users} from './users'
 //  importing array of users from app.js as user
 export default function Homepage(props) {
     const [newUser,setNewUser]=useState([])
@@ -22,7 +21,7 @@ export default function Homepage(props) {
             Select an account
         </div >
         <ul className='list'>
-            {users.map((item)=>{return <li><div className='flexing'><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div></div><hr></hr></li>})}
+            {users.map((item)=>{return <li key={item.id} onClick={} ><div className='flexing'><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div></div><hr></hr></li>})}
         </ul>
     
     </div>
