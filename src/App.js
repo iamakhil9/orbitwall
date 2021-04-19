@@ -43,7 +43,7 @@ function App() {
   const usersData =  async() =>{
  try{
    const res=await axios.get('https://panorbit.in/api/users.json');
-   setUser(arr => [...arr,res.data.users])
+  //  setUser(arr => [...arr,res.data.users])
   setUser(res.data.users)
    console.log(res.data.users)
  }
