@@ -6,29 +6,7 @@ import {useParams} from 'react-router-dom'
 function Profile(props) {
     const {ids}=useParams();
     console.log(ids)
-    const items= props.users1;
-    // console.log(props.users1)
-    const exctract = items.map((item)=>{ if (ids==item.id){return (<div key ={item.id}className="card card-box card-box2">
-       
-    <div><img src={item.profilepicture} alt='pic'></img></div>
-    <div className='info'> <span className='content'>{item.name}</span></div>
-    <div className='info'>Username : <span className='content'>{item.username}</span></div>
-    <div className='info'>e-mail : <span className='content'>{item.email}</span></div>
-    <div className='info'>Phone : <span className='content'>item.phone</span></div>
-    <div className='info'>Website : <span className='content'>item.website</span></div>
-    <div id='topline'><hr></hr></div>
-    <div className='info'> Company <span className='content'></span></div>
-    <div className='info'>name : <span className='content'>item.company.name</span></div>
-    <div className='info'>catchPhrase : <span className='content'>item.company.catchPhrase</span></div>
-    <div className='info'>bs : <span className='content'>item.company.bs</span></div>
-
-  </div>)} else{return ""}
-}
-
-)
-
-
-    
+    console.log(props.users1)
 //    const users= [
 //         {
 //             "id": 1,
@@ -130,7 +108,7 @@ function Profile(props) {
 
     const [user,setUser] = useState([]);
     return (
-    
+        <div>
             <div className='photo-grid'>
             <div
         className="card card-tall ">
@@ -157,7 +135,7 @@ function Profile(props) {
         <div id='topline'><hr></hr></div>
       </div>
       </div>
-{/* { props.users1.map((item)=>{ if (ids===item.id){return (<div key ={item.id}className="card card-box card-box2">
+{ props.users1.map((item)=>{ if (ids===item.id){return (<div key ={item.id}className="card card-box card-box2">
        
         <div><img src={item.profilepicture} alt='pic'></img></div>
         <div className='info'> <span className='content'>{item.name}</span></div>
@@ -175,9 +153,9 @@ function Profile(props) {
     }
   
     )
-} */ }
-{exctract}
-      <div className="card card-box card-box2">
+}
+      <div
+        className="card card-box card-box2">
        <div className='info'> Address :                             <span className='content'></span></div>
         <div className='info'>street : <span className='content'>item.address.street</span></div>
         <div className='info'>suite : <span className='content'>item.address.suite</span></div>
@@ -185,7 +163,7 @@ function Profile(props) {
         <div className='info'>zipcode : <span className='content'>item.address.zipcode</span></div>
         </div>
     
-      
+      </div>
         
     </div>
     

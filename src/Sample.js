@@ -6,7 +6,7 @@ function Sample(props) {
     // console.log(user1)
     return (
         <div>
-           <h1>Sample</h1> 
+           <h1>Sample {props.a}</h1> 
         </div>
     )
 }
