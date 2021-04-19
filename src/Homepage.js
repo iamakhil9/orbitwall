@@ -1,9 +1,10 @@
 import './App.css';
 import {useState} from 'react'
+import {Link} from 'react-router-dom'
 //  importing array of users from app.js as user
 export default function Homepage(props) {
     const [newUser,setNewUser]=useState([])
-    // const users =props.myUser;
+    const users =props.myUser;
     // console.log(users)
     // const displaylist=()=>{ return props.user.map((item)=>{console.log(item.id)})}
     // displaylist();
@@ -20,9 +21,9 @@ export default function Homepage(props) {
         <div className="heading">
             Select an account
         </div >
-        {/* <ul className='list'>
-            { {users.map((item)=>{return <li key={item.id} onClick={} ><div className='flexing'><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div></div><hr></hr></li>})} }
-    </ul>*/}
+        <ul className='list'>
+            {users.map((item)=>{return <Link key={item.id} to={"/profile/"+item.id}><li   ><div className='flexing'><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div></div><hr></hr></li></Link>})} 
+    </ul>
     
     </div>
     </div>

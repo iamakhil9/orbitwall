@@ -21,8 +21,25 @@ function Profile(props) {
     <div className='info'>name : <span className='content'>item.company.name</span></div>
     <div className='info'>catchPhrase : <span className='content'>item.company.catchPhrase</span></div>
     <div className='info'>bs : <span className='content'>item.company.bs</span></div>
+    
 
-  </div>)} else{return ""}
+  </div>)} 
+  else{return ""}
+}
+
+)
+const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
+       <div key={item.name} className="card card-box card-box2">
+       <div className='info'> Address :                             <span className='content'></span></div>
+        <div className='info'>street : <span className='content'>{item.address.street}</span></div>
+        <div className='info'>suite : <span className='content'>{item.address.suite}</span></div>
+        <div className='info'>city : <span className='content'>{item.address.city}</span></div>
+        <div className='info'>zipcode : <span className='content'>{item.address.zipcode}</span></div>
+
+    
+
+  </div>)} 
+  else{return ""}
 }
 
 )
@@ -177,16 +194,7 @@ function Profile(props) {
     )
 } */ }
 {exctract}
-      <div className="card card-box card-box2">
-       <div className='info'> Address :                             <span className='content'></span></div>
-        <div className='info'>street : <span className='content'>item.address.street</span></div>
-        <div className='info'>suite : <span className='content'>item.address.suite</span></div>
-        <div className='info'>city : <span className='content'>item.address.city</span></div>
-        <div className='info'>zipcode : <span className='content'>item.address.zipcode</span></div>
-        </div>
-    
-      
-        
+{exctractAddress}
     </div>
     
     )

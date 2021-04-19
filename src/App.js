@@ -106,15 +106,15 @@ function App() {
       <ul>
       <li><Link to ="/" >Demo Page</Link></li>
        <li> <Link to ="/sample" >Sample </Link></li>
-<button onClick={()=>Funct()}>click</button>
+{/* <button onClick={()=>Funct()}>click</button> */}
       </ul>
       <Switch>
         <Route exact path="/" >
-          <Homepage />
+          <Homepage myUser={user} />
         </Route>
-        <Route  path="/sample">
+        {/* <Route  path="/sample">
           <Sample a={a}/>
-        </Route>
+        </Route> */}
         <Route  path="/profile/:ids">
           <Profile users1={user} />
          </Route>
