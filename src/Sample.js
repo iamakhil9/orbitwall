@@ -1,14 +1,14 @@
 import React from 'react'
 
 function Sample(props) {
-    console.log(props.user)
-    const user1=props.user
+    // console.log(props.user)
+    // const user1=props.user
+    // console.log(user1)
     return (
         <div>
-            {user1[0].name}
+           <h1>Sample</h1> 
         </div>
     )
 }
 
-export default Sample
-{}
+export default Sample;

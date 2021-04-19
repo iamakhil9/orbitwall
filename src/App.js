@@ -1,9 +1,12 @@
 import './App.css';
 import {useState,useEffect} from 'react'
 import axios from 'axios'
+import { Switch, Route, Link} from 'react-router-dom'
 // import Homepage from './Homepage'
 // import Profile from './Profile'
 import Sample from './Sample';
+import Demo from "./Demo";
+import Homepage from './Homepage';
 function App() {
   const  [user, setUser] = useState([])
   const  [userinfo, setUserInfo] = useState([])
@@ -35,38 +38,85 @@ function App() {
       }
   }
 ]
-  // const usersData =  async() =>{
+//   const usersData =  async() =>{
 //  try{
 //    const res=await axios.get('https://panorbit.in/api/users.json');
-//   //  setUser(arr => [...arr,res.data.users])
+  //  setUser(arr => [...arr,res.data.users])
 //   setUser(res.data.users)
-  //  console.log(res.data.users)
+//    console.log(res.data.users)
 //  }
 //  catch(error){
 //    console.log(error);
 //    }
 //   }
-//   useEffect(()=> {usersData();},[])
+  // useEffect(()=> {usersData();},[])
   // const l = user.map((item)=>{return console.log(item.id)}) 
   // console.log(user)
   
-  const funct =(e) =>{
-    setUser(u)
-    console.log(e.target.id)
+  const Funct =(props) =>{
+    console.log(props.item)
+    const data=props.item
+  
+    // document.getElementById('userdata').innerHTML="<Sample user="{data}+" />"
+    
 
   }
+    const usersData =  async() =>{
+ try{
+   const res=await axios.get('https://randomuser.me/api/?results=5');
+  //  setUser(arr => [...arr,res.data.users])
+  // setUser(res.data.users)
+   console.log(res.data.results.id)
+  //  console.log(res.data.results[0].id)
+  //  console.log(res.data.results[0].name)
+  //  console.log(res.data.results[0].login)
+  //  console.log(res.data.results[0].name.first)
+  const pictures = res.data.results.map((pic) => {
+    return (
+      <div key = {pic.results}>
+        <img src = {pic.picture.thumbnail} />
+      </div>
+    )
+  })
+  // setUser(pictures)
+ }
+ catch(error){
+   console.log(error);
+   }
+  }
+  // useEffect(()=> {usersData();},[])
 
   return (
     <div className="App">
       {/* <Homepage myUser={user} /> */}
       {/* <Profile  /> */}
-      <button onClick={()=>funct()}>click</button>
-      <ul>
+       {/* <button onClick={()=>Funct()}>click</button>  */}
+      {/* <ul>
         <li id='12233' onClick={(e)=>funct(e)} >testing</li>
       </ul>
-      <div id='testid'> </div>
+      <div id='testid'> </div>  */}
       {/* <Sample user={user}/> */}
+      {/* <ul className='list'>
+            {user.map((item)=>{return <li key={item.id}  onClick={()=>Funct({item})} ><div className='flexing'><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div></div><hr></hr></li>})}
+        </ul> */}
+        {/* <div id='userdata'>{userinfo} </div> */}
+
+      {/* {user} */}
+      <ul>
+      <li><Link to ="/" >Demo Page</Link></li>
+       <li> <Link to ="/sample" >Sample </Link></li>
+
+      </ul>
+      <Switch>
+        <Route exact path="/" >
+          <Homepage />
+        </Route>
+        <Route  path="/sample">
+          <Sample />
+        </Route>
+      </Switch>
     </div>
+
   );
 }
 
