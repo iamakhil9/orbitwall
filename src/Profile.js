@@ -28,6 +28,17 @@ function Profile(props) {
 }
 
 )
+const rectractHeader = items.map ((item )=>{
+  if (ids==item.id){return (
+    <div id='profile-flexing'>
+            <img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img>
+            <div className='namesprofile'>{item.name}</div>
+      </div>
+    )} 
+else{return ""}
+}
+)
+
 const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
        <div key={item.name} className="card card-box card-box2">
        <div className='info'> Address :                             <span className='content'></span></div>
@@ -167,10 +178,7 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
       <div className="card card-wide">
         <div className='topheader'>
         <div id='p' >Profile</div>
-        <div id='profile-flexing'>
-            <img className='profilethumbnail' src="https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg" alt='thumbnail'></img>
-            <div className='namesprofile'>Leahne Graham</div>
-        </div>
+        {rectractHeader}
         <div id='topline'><hr></hr></div>
       </div>
       </div>

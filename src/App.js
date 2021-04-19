@@ -103,11 +103,9 @@ function App() {
         {/* <div id='userdata'>{userinfo} </div> */}
 
       {/* {user} */}
-      <ul>
-      <li><Link to ="/" >Demo Page</Link></li>
-       <li> <Link to ="/sample" >Sample </Link></li>
+
 {/* <button onClick={()=>Funct()}>click</button> */}
-      </ul>
+  
       <Switch>
         <Route exact path="/" >
           <Homepage myUser={user} />
