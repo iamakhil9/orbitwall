@@ -92,3 +92,7 @@ padding-top: 10px;
 hr{
 	opacity: .3;
 }
+.gmap{
+	height: 200px;
+	width: 250px;
+}

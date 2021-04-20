@@ -26,11 +26,11 @@
 }
 .profile-menu{
     background-image: linear-gradient(to bottom, #3d56c8,#702cc8 );
-    padding: 250px 35px 220px 40px;
+    padding: 250px 0 220px 40px;
     height: 200px;
-    width: 170px;
+    width: 207px;
     margin : 40px 20px 50px 45px;
-    color: white;
+    color: #c5bfbffa;
     font-weight: bold;
     font-size: large;
     border-radius: 30px;
@@ -40,26 +40,46 @@
     list-style:none;
 }
 .profile-menu >ul > li{
-    padding:20px 30px 10px 20px ;
+    padding:20px 0 10px 0 ;
 
 }
 .profile-menu >ul > hr{
 opacity: .5;
+width: 100px;
+margin-left: 2px;
 }
-hr{
+/* hr{
     opacity: .5;
-}
+
+} */
 .profile-menu-items{
-    opacity: .5;
+    opacity: 1;
 }
 .profile-menu-items:hover{
-    opacity: 1;
+    opacity: .9;
 
 }
 .profile-menu >ul > li:hover{
     opacity: 1;
+    color: white;
 }
-
+.menu-arrow{
+display: inline;
+}
+.arrt{
+    background: white;
+    color: #c5bfbffa;
+    margin-top: 2px;
+    padding-top: 10px;
+    height: 30px;
+    width: 19%;
+    opacity: 1;
+    text-align: -webkit-center;
+    border-radius: 20px 0 0 20px;
+}
+/* .profile-menu-items > i {
+    margin-left: 107px;
+} */
 #p{
     font-size: larger;
     font-weight: bold;
@@ -90,7 +110,10 @@ padding-top: 10px;
     border-radius: 50%;
     height: 180px;
     width: 180px;
-    margin: -80px 50px 10px -50px;
+    margin: -100px 50px 10px -50px;
+}
+.cardbox3{
+    margin-top: -80px;
 }
 .info{
     font-size: larger;
@@ -102,4 +125,47 @@ padding-top: 10px;
 .content{
     opacity: .9;
     color: black;
+}
+
+.Modal{
+	margin-top:0;
+	display: inline-block;
+	background: #f7e4e4;
+	position: relative;;
+	height: 350px;
+	width: 300px;
+	left: 35%;
+	right: 50%;
+	border-radius: 20px;
+  margin-bottom: 200px;
+  box-shadow: 5px 10px 18px #888888;
+}
+.Overlay{
+width: 200px;
+}
+.info1{
+    font-size: small;
+    font-weight: bold;
+    padding: 10px 5px 10px 30px;
+    margin-left: -30px;
+    margin-top: 33%;
+    color: gray;
+}
+/* .profile-menu-items > i{
+    margin-left: 110px;
+} */
+#profile{
+    margin-left: 110px;
+}
+#posts{
+    margin-left: 120px;
+}
+#gallery{
+    margin-left: 111.5px;
+}
+#todo{
+    margin-left: 127px;
+}
+.menu-arrow{
+    display: inline-block;
 }

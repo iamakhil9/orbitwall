@@ -2,8 +2,11 @@ import './Profile.css'
 import React from 'react'
 import {useState} from 'react'
 import {useParams} from 'react-router-dom'
-
+import Modal from 'react-modal'
+import GoogleMap from './GoogleMap'
+Modal.setAppElement('#root')
 function Profile(props) {
+  const [modalIsOpen,setModalIsOpen]=useState(false)
     const {ids}=useParams();
     console.log(ids)
     const items= props.users1;
@@ -14,13 +17,13 @@ function Profile(props) {
     <div className='info'> <span className='content'>{item.name}</span></div>
     <div className='info'>Username : <span className='content'>{item.username}</span></div>
     <div className='info'>e-mail : <span className='content'>{item.email}</span></div>
-    <div className='info'>Phone : <span className='content'>item.phone</span></div>
-    <div className='info'>Website : <span className='content'>item.website</span></div>
+    <div className='info'>Phone : <span className='content'>{item.phone}</span></div>
+    <div className='info'>Website : <span className='content'>{item.website}</span></div>
     <div id='topline'><hr></hr></div>
     <div className='info'> Company <span className='content'></span></div>
-    <div className='info'>name : <span className='content'>item.company.name</span></div>
-    <div className='info'>catchPhrase : <span className='content'>item.company.catchPhrase</span></div>
-    <div className='info'>bs : <span className='content'>item.company.bs</span></div>
+    <div className='info'>name : <span className='content'>{item.company.name}</span></div>
+    <div className='info'>catchPhrase : <span className='content'>{item.company.catchPhrase}</span></div>
+    <div className='info'>bs : <span className='content'>{item.company.bs}</span></div>
     
 
   </div>)} 
@@ -30,7 +33,7 @@ function Profile(props) {
 )
 const rectractHeader = items.map ((item )=>{
   if (ids==item.id){return (
-    <div id='profile-flexing'>
+    <div id='profile-flexing' onClick={()=>setModalIsOpen(true)}>
             <img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img>
             <div className='namesprofile'>{item.name}</div>
       </div>
@@ -40,14 +43,16 @@ else{return ""}
 )
 
 const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
-       <div key={item.name} className="card card-box card-box2">
+       <div key={item.name} className="card card-box card-box2 cardbox3"> 
        <div className='info'> Address :                             <span className='content'></span></div>
         <div className='info'>street : <span className='content'>{item.address.street}</span></div>
         <div className='info'>suite : <span className='content'>{item.address.suite}</span></div>
         <div className='info'>city : <span className='content'>{item.address.city}</span></div>
         <div className='info'>zipcode : <span className='content'>{item.address.zipcode}</span></div>
 
-    
+      {/* <div className='info'><GoogleMap lat={item.address.geo.lat} lng={item.address.geo.lng}/></div> */}
+      <div className='info1'>Lat: <span className='content'>{item.address.geo.lat}</span> Lng: <span className='content'>  {item.address.geo.lng}</span></div>
+
 
   </div>)} 
   else{return ""}
@@ -164,22 +169,27 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
         className="card card-tall ">
             <div className='profile-menu'>
                 <ul >
-                    <li className='profile-menu-items'>Profile</li>
+                <li class='profile-menu-items'>Profile <i id="profile"class="fas fa-angle-right arrt"></i>  </li> 
                     <hr></hr>
-                    <li className='profile-menu-items'>Posts</li>
+                    <li className='profile-menu-items'>Posts  <i id="posts" class="fas fa-angle-right arrt"></i></li>
                     <hr></hr>
-                    <li className='profile-menu-items'>Gallery</li>
+                    <li className='profile-menu-items'>Gallery<i id="gallery"class="fas fa-angle-right arrt"></i>  </li> 
                     <hr></hr>
-                    <li className='profile-menu-items'>Todo</li>
+                    <li className='profile-menu-items'>Todo<i id="todo"class="fas fa-angle-right arrt"></i>  </li> 
                 </ul>
             </div>
         1
       </div>
       <div className="card card-wide">
         <div className='topheader'>
+          {/* <div className="Modal">Modal</div> */}
         <div id='p' >Profile</div>
         {rectractHeader}
         <div id='topline'><hr></hr></div>
+        {/* <Modal   className="Modal" overlayClassName="Overlay"isOpen={modalIsOpen} onRequestClose={()=>setModalIsOpen(false)}>
+          <h2>Modal</h2>
+          <button onClick={()=>setModalIsOpen(false)}>close</button>
+        </Modal> */}
       </div>
       </div>
 {/* { props.users1.map((item)=>{ if (ids===item.id){return (<div key ={item.id}className="card card-box card-box2">

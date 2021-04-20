@@ -1,4 +1,5 @@
 import React from 'react'
+import GoogleMap from './GoogleMap'
 
 function Sample(props) {
     // console.log(props.user)
@@ -7,6 +8,7 @@ function Sample(props) {
     return (
         <div>
            <h1>Sample {props.a}</h1> 
+         <div className='gmap' ><GoogleMap lat='14.4644'  lng='75.921' /></div>
         </div>
     )
 }

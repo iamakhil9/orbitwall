@@ -9,6 +9,7 @@ import Demo from "./Demo";
 import Homepage from './Homepage';
 import Info from './Info';
 import Profile from './Profile';
+
 function App() {
   const  [user, setUser] = useState([])
   const  [userinfo, setUserInfo] = useState([])
@@ -111,15 +112,15 @@ function App() {
           <Homepage myUser={user} />
         </Route>
         {/* <Route  path="/sample">
-          <Sample a={a}/>
+          <Sample />
         </Route> */}
         <Route  path="/profile/:ids">
           <Profile users1={user} />
          </Route>
          
-        <Route  path="/info/:email">
+        {/* <Route  path="/info/:email">
           <Info user2={userinfo} />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
 
