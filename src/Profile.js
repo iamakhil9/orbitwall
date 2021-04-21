@@ -50,7 +50,7 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
         <div className='info'>city : <span className='content'>{item.address.city}</span></div>
         <div className='info'>zipcode : <span className='content'>{item.address.zipcode}</span></div>
 
-      {/* <div className='info'><GoogleMap lat={item.address.geo.lat} lng={item.address.geo.lng}/></div> */}
+      <div className='info'><GoogleMap lat={item.address.geo.lat} lng={item.address.geo.lng}/></div>
       <div className='info1'>Lat: <span className='content'>{item.address.geo.lat}</span> Lng: <span className='content'>  {item.address.geo.lng}</span></div>
 
 
