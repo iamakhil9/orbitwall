@@ -31,7 +31,7 @@ function Profileposts(props) {
 )
 const rectractHeader = items.map ((item )=>{
   if (ids==item.id){return (
-    <div id='profile-flexing' onClick={()=>setModalIsOpen(true)}>
+    <div id='profile-flexing' onClick={()=>OpenForm()}>
             <img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img>
             <div className='namesprofile'>{item.name}</div>
       </div>
@@ -57,6 +57,25 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
 }
 
 )
+const reactHeadercard = items.map ((item )=>{
+  if (ids==item.id){return (
+    <div id='card' >
+            <div><img  src={item.profilepicture} style={{borderRadius:"50%"}}alt='thumbnail'height="50px" width="50px"></img></div>
+            <div className='pcard'>{item.name}</div>
+            <div className='namesprofile' style={{fontSize:"large"}}>{item.email}</div>
+            <div onClick={()=>CloseForm()} ><Link to='/'><button className="signout" > Signout</button></Link></div>
+      </div>
+    )} 
+else{return ""}
+}
+)
+const OpenForm=()=> {
+    document.getElementById("card").style.display = "block";
+  }
+  
+const CloseForm =()=> {
+    document.getElementById("card").style.display = "none";
+  }
 
 
     
@@ -163,6 +182,7 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
     return (
     
             <div className='photo-grid'>
+              {reactHeadercard}
             <div
         className="card card-tall ">
             <div className='profile-menu'>

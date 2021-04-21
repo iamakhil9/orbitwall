@@ -183,3 +183,47 @@ li >a:hover{
     
     color:#f0e9e9ea; 
 }
+#card{
+    float: right;
+    transition: .9s;
+  height: 260px;
+  width: 250px;
+  background: #fdfdfd;
+  padding: 50px 25px;
+  /* position: absolute; */
+  border-radius: 10px 10px 2px 2px;
+  position: absolute;
+  font-size: 20px;
+  margin-top: 90px;
+  text-align: center;
+  margin-left: 1000px;
+  color: #d1ddf3;
+  display:none;
+  box-shadow: 5px 10px 18px #888888;
+  border-radius: 20px;
+  z-index: 3;
+}
+.pcard{
+    font-size: larger;
+padding-top: 10px;
+    /* font-weight: bold; */
+    color: rgb(46, 45, 45);
+}
+.signout{
+    background-color: darkorchid;
+    margin-top: 10px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    outline-style: none;
+    padding: 7px 12px 7px 12px;
+    border-radius: 20px;
+    border-style: none;
+    cursor:pointer;
+    transition: .5s;
+}
+.signout:hover{
+ border: 1px solid darkorchid;
+ color:  darkorchid;
+ background-color: white;
+}
