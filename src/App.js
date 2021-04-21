@@ -9,6 +9,9 @@ import Demo from "./Demo";
 import Homepage from './Homepage';
 import Info from './Info';
 import Profile from './Profile';
+import Profileposts from './Profileposts';
+import Profilegallery from './Profilegallery'
+import Profiletodo from './Profiletodo'
 
 function App() {
   const  [user, setUser] = useState([])
@@ -114,8 +117,17 @@ function App() {
         {/* <Route  path="/sample">
           <Sample />
         </Route> */}
-        <Route  path="/profile/:ids">
+        <Route exact path="/profile/:ids">
           <Profile users1={user} />
+         </Route>
+         <Route  path={"/profile/:ids"+"/posts"}>
+          <Profileposts users1={user} />
+         </Route>
+         <Route  path={"/profile/:ids"+"/gallery"}>
+          <Profilegallery users1={user} />
+         </Route>
+         <Route  path={"/profile/:ids"+"/todo"}>
+          <Profiletodo users1={user} />
          </Route>
          
         {/* <Route  path="/info/:email">

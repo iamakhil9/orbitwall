@@ -2,10 +2,8 @@ import './Profile.css'
 import React from 'react'
 import {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
-import Modal from 'react-modal'
 import GoogleMap from './GoogleMap'
-Modal.setAppElement('#root')
-function Profile(props) {
+function Profileposts(props) {
   const [modalIsOpen,setModalIsOpen]=useState(false)
     const {ids}=useParams();
     console.log(ids)
@@ -169,9 +167,9 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
         className="card card-tall ">
             <div className='profile-menu'>
             <ul >
-                <li class='profile-menu-items' style={{color:"white"}}><Link to={"/profile/"+ids} style={{color:"white"}}> Profile <i id="profile"class="fas fa-angle-right arrt"></i>  </Link></li> 
+                <li class='profile-menu-items'><Link to={"/profile/"+ids}> Profile   </Link></li> 
                     <hr></hr>
-                    <li className='profile-menu-items'><Link to={"/profile/"+ids+"/posts"}>Posts  </Link></li>
+                    <li className='profile-menu-items'><Link to={"/profile/"+ids+"/posts"} style={{color:"white"}}>Posts  <i id="posts" class="fas fa-angle-right arrt"></i></Link></li>
                     <hr></hr>
                    <li className='profile-menu-items'> <Link to={"/profile/"+ids+"/gallery"}>Gallery</Link>  </li> 
                     <hr></hr>
@@ -182,40 +180,18 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
       </div>
       <div className="card card-wide">
         <div className='topheader'>
-          {/* <div className="Modal">Modal</div> */}
+    
         <div id='p' >Profile</div>
         {rectractHeader}
         <div id='topline'><hr></hr></div>
-        {/* <Modal   className="Modal" overlayClassName="Overlay"isOpen={modalIsOpen} onRequestClose={()=>setModalIsOpen(false)}>
-          <h2>Modal</h2>
-          <button onClick={()=>setModalIsOpen(false)}>close</button>
-        </Modal> */}
       </div>
       </div>
-{/* { props.users1.map((item)=>{ if (ids===item.id){return (<div key ={item.id}className="card card-box card-box2">
-       
-        <div><img src={item.profilepicture} alt='pic'></img></div>
-        <div className='info'> <span className='content'>{item.name}</span></div>
-        <div className='info'>Username : <span className='content'>{item.username}</span></div>
-        <div className='info'>e-mail : <span className='content'>{item.email}</span></div>
-        <div className='info'>Phone : <span className='content'>item.phone</span></div>
-        <div className='info'>Website : <span className='content'>item.website</span></div>
-        <div id='topline'><hr></hr></div>
-        <div className='info'> Company <span className='content'></span></div>
-        <div className='info'>name : <span className='content'>item.company.name</span></div>
-        <div className='info'>catchPhrase : <span className='content'>item.company.catchPhrase</span></div>
-        <div className='info'>bs : <span className='content'>item.company.bs</span></div>
+      <div  className="card card-wide"> <div id='comingsoon'>Coming Soon</div></div>
 
-      </div>)}
-    }
-  
-    )
-} */ }
-{exctract}
-{exctractAddress}
+
     </div>
     
     )
 }
 
-export default Profile ;
+export default Profileposts ;
