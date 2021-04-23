@@ -2,7 +2,7 @@ import './Profile.css'
 import React from 'react'
 import {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
-import GoogleMap from './GoogleMap'
+// import GoogleMap from './GoogleMap'
 function Profileposts(props) {
   const [modalIsOpen,setModalIsOpen]=useState(false)
     const {ids}=useParams();
@@ -30,10 +30,10 @@ function Profileposts(props) {
 
 )
 const rectractHeader = items.map ((item )=>{
-  if (ids==item.id){return (
+  if (ids===item.login.username){return (
     <div id='profile-flexing' onClick={()=>OpenForm()}>
-            <img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img>
-            <div className='namesprofile'>{item.name}</div>
+            <img className='profilethumbnail' src={item.picture.thumbnail} alt='thumbnail'></img>
+            <div className='namesprofile'>{item.name.first} {item.name.last}</div>
       </div>
     )} 
 else{return ""}
@@ -58,10 +58,10 @@ const exctractAddress = items.map((item)=>{ if (ids==item.id){return (
 
 )
 const reactHeadercard = items.map ((item )=>{
-  if (ids==item.id){return (
+  if (ids===item.login.username){return (
     <div id='card' >
-            <div><img  src={item.profilepicture} style={{borderRadius:"50%"}}alt='thumbnail'height="50px" width="50px"></img></div>
-            <div className='pcard'>{item.name}</div>
+            <div><img  src={item.picture.medium} style={{borderRadius:"50%"}}alt='thumbnail'height="50px" width="50px"></img></div>
+            <div className='pcard'>{item.name.first}{item.name.last}</div>
             <div className='namesprofile' style={{fontSize:"large"}}>{item.email}</div>
             <div onClick={()=>CloseForm()} ><Link to='/'><button className="signout" > Signout</button></Link></div>
       </div>
