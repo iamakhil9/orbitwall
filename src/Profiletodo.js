@@ -4,12 +4,11 @@ import {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import GoogleMap from './GoogleMap'
 function Profiletodo(props) {
-  const [modalIsOpen,setModalIsOpen]=useState(false)
     const {ids}=useParams();
     console.log(ids)
     const items= props.users1;
     // console.log(props.users1)
-    const exctract = items.map((item)=>{ if (ids==item.id){return (<div key ={item.id}className="card card-box card-box2">
+    const exctract = items.map((item)=>{ if (ids===item.login.username){return (<div key ={item.id}className="card card-box card-box2">
        
     <div><img src={item.profilepicture} alt='pic'></img></div>
     <div className='info'> <span className='content'>{item.name}</span></div>
@@ -18,10 +17,7 @@ function Profiletodo(props) {
     <div className='info'>Phone : <span className='content'>{item.phone}</span></div>
     <div className='info'>Website : <span className='content'>{item.website}</span></div>
     <div id='topline'><hr></hr></div>
-    <div className='info'> Company <span className='content'></span></div>
-    <div className='info'>name : <span className='content'>{item.company.name}</span></div>
-    <div className='info'>catchPhrase : <span className='content'>{item.company.catchPhrase}</span></div>
-    <div className='info'>bs : <span className='content'>{item.company.bs}</span></div>
+  
     
 
   </div>)} 

@@ -15,7 +15,7 @@ function App() {
 
     const usersData =  async() =>{
  try{
-   const res=await axios.get('https://randomuser.me/api/?results=5');
+   const res=await axios.get('https://randomuser.me/api/?results=9');
   //  setUser(arr => [...arr,res.data.users])
   const pictures = res.data.results.map((pic) => {
     return (
@@ -35,23 +35,6 @@ function App() {
   // console.log(user)
   return (
     <div className="App">
-      {/* {user} */}
-      {/* <Homepage myUser={user} /> */}
-      {/* <Profile  /> */}
-       {/* <button onClick={()=>Funct()}>click</button>  */}
-      {/* <ul>
-        <li id='12233' onClick={(e)=>funct(e)} >testing</li>
-      </ul>
-      <div id='testid'> </div>  */}
-      {/* <Sample user={user}/> */}
-      {/* <ul className='list'>
-            {user.map((item)=>{return <li key={item.id}  onClick={()=>Funct({item})} ><div className='flexing'><img className='profilethumbnail' src={item.profilepicture} alt='thumbnail'></img><div className='names'>{item.name}</div></div><hr></hr></li>})}
-        </ul> */}
-        {/* <div id='userdata'>{userinfo} </div> */}
-
-      {/* {user} */}
-
-{/* <button onClick={()=>Funct()}>click</button> */}
   
       <Switch>
         <Route exact path="/" >
