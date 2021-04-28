@@ -89,7 +89,6 @@ const [user,setUser] = useState([]);
                     <li className='profile-menu-items'><Link to={"/profile/"+ids+"/todo"}>Todo </Link> </li> 
                 </ul>
             </div>
-        1
       </div>
       <div className="card card-wide">
         <div className='topheader'>

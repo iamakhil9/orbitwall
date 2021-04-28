@@ -54,6 +54,36 @@
 }
 }
 
+@media screen and (max-width: 900px) {
+
+    .card-box2{
+        grid-row: span 2/auto;
+        text-align: center;
+        padding-left: 10px;
+    }
+    .cardbox3{
+        margin-top: -80px;
+    }
+    .card-box2  img{
+        border-radius: 50%;
+        height: 180px;
+        width: 180px;
+        margin: 0 0 10px 0;
+        overflow: hidden;
+    }
+    .card-wide{
+        height: 100px;
+    }
+.info{
+    padding-right: 20px;
+
+}
+.info2{
+    margin-left: 1rem;
+    padding-left: 3rem;
+}
+}
+
 .profile-menu{
     background-image: linear-gradient(to bottom, #3d56c8,#702cc8 );
     padding: 250px 0 220px 40px;
