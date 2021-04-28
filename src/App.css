@@ -6,30 +6,51 @@
 }
 
 
-svg{
+/* svg{
 	margin-top: 170px;
 	height: 50vh;
 	position: absolute;
-	width:100%; 
+	width:100%;
 	object-fit: contain;
-}
+} */
 
 .grad{
 	height: 450px;
 	background-image: linear-gradient(to right, #702cc8 , #3d56c8);
 }
+.Top{
+	height: 60vh;
+    background-image: linear-gradient(to right, #702cc8 , #3d56c8);
+			
+}
+.Bottom{
+	height: 40vh;
+	background: white;
+	overflow: scroll;
+}
+.Top .wave1{
+position: relative;
+top: 100%;
+transform: translateY(-100%)
+}
+
 .layersvg2{
-	opacity: .5;
+	position: relative;
+   top:-10px;
+   transform: translateY(-100%);
+   opacity: .5;
+	/* opacity: .5;
 	margin-top: 150px;
 	height: 50vh;
 	position: absolute;
-	width:100%; 
+	width:100%;
+} */
 }
 .userlist{
-	margin-top: -300px;
+	margin-top: -600px;
 	display: inline-block;
 	background: #f6f6f6;
-	position: relative;;
+	position: absolute;
 	height: 500px;
 	width: 500px;
 	left: 35%;
@@ -38,6 +59,17 @@ svg{
   margin-bottom: 200px;
   box-shadow: 5px 10px 18px #888888;
 }
+/* .card{
+	position: fixed;
+	margin: auto;
+	width: 10rem;
+	height: 15rem;
+	background: red;
+	text-align: center;
+	z-index: 10;
+	top: 30%;
+	left: 50%;
+} */
 
 .heading{
 	padding: 40px;
@@ -60,7 +92,7 @@ svg{
 	
 }
 .list {
-	height: 400px;
+	height: 350px;
 	overflow: auto; 
 }
 .flexing{
@@ -95,4 +127,39 @@ hr{
 .gmap{
 	height: 200px;
 	width: 250px;
+}
+
+@media (max-width:480px) {
+	/* .userlist{
+		scale: .5;
+	}
+	svg{
+		display: none;
+	
+	}
+	.layersvg2{
+		display: none;
+	}
+
+	.grad{
+		height: 400px;
+		width: 100%;
+		background-image: linear-gradient(to right, #702cc8 , #3d56c8);
+		box-sizing: border-box;
+		
+
+	} */
+	.userlist{
+
+		height: 500px;
+		width: 240px;
+		left: 20%;
+		right: 40%;
+		border-radius: 20px;
+	  margin-bottom: 200px;
+	  box-shadow: 5px 10px 18px #888888;
+	}
+	.grad .layersvg2{
+		position:relative;
+	}
 }

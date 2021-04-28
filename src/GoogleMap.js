@@ -1,5 +1,5 @@
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
-import React ,{Component} from 'react'
+import React ,{Component} from 'react';
 
 export class MapContainer extends Component {
     state = {
@@ -13,8 +13,8 @@ export class MapContainer extends Component {
 
     };
      style = {
-        width: '35%',
-        height: '30%'
+        width: '100%',
+        height: '100%',
       }
    
     onMarkerClick = (props, marker, e) =>
@@ -32,10 +32,15 @@ export class MapContainer extends Component {
         })
       }
     };
+     containerStyle = {
+      position: 'absolute',  
+      width: '400px',
+      height: '160px'
+    }
    
     render() {
       return (
-        <Map style={this.style} google={this.props.google}
+        <Map containerStyle={this.containerStyle} style={this.style} google={this.props.google}
             initialCenter={{
                 lat: this.state.mapCenter.lat,
                 lng: this.state.mapCenter.lng
@@ -56,5 +61,5 @@ export class MapContainer extends Component {
   }
 
   export default GoogleApiWrapper({
-         apiKey: (ADD_YOUR_GOOGLE_MAP_API_KEY_HERE)
+         apiKey: process.env.REACT_APP_API_KEY 
   })(MapContainer)

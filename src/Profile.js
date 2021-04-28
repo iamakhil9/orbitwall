@@ -2,9 +2,7 @@ import './Profile.css'
 import React from 'react'
 import {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
-import Modal from 'react-modal'
 import GoogleMap from './GoogleMap'
-Modal.setAppElement('#root')
 function Profile(props) {
     const {ids}=useParams();
     console.log(ids)
@@ -37,14 +35,14 @@ else{return ""}
 )
 
 const exctractAddress = items.map((item)=>{ if (ids===item.login.username){return (
-       <div key={item.name} className="card card-box card-box2 cardbox3"> 
+       <div key={item.name} className="card-box2 cardbox3"> 
        <div className='info'> Address :                             <span className='content'></span></div>
         <div className='info'>street : <span className='content'>{item.location.street.name}</span></div>
         <div className='info'>street number : <span className='content'>{item.location.street.number}</span></div>
         <div className='info'>city : <span className='content'>{item.location.city}</span></div>
         <div className='info'>zipcode : <span className='content'>{item.location.postcode}</span></div>
 
-      <div className='info'><GoogleMap lat={item.location.coordinates.latitude} lng={item.location.coordinates.longitude}/></div>
+      <div className='info info2'><GoogleMap  lat={item.location.coordinates.latitude} lng={item.location.coordinates.longitude}/></div>
       <div className='info1'>Lat: <span className='content'>{item.location.coordinates.latitude}</span> Lng: <span className='content'>  {item.location.coordinates.longitude}</span></div>
 
 
@@ -95,14 +93,9 @@ const [user,setUser] = useState([]);
       </div>
       <div className="card card-wide">
         <div className='topheader'>
-          {/* <div className="Modal">Modal</div> */}
         <div id='p' >Profile</div>
         {rectractHeader}
         <div id='topline'><hr></hr></div>
-        {/* <Modal   className="Modal" overlayClassName="Overlay"isOpen={modalIsOpen} onRequestClose={()=>setModalIsOpen(false)}>
-          <h2>Modal</h2>
-          <button onClick={()=>setModalIsOpen(false)}>close</button>
-        </Modal> */}
       </div>
       </div>
 {exctract}

@@ -24,6 +24,36 @@
       text-align: center;
   }
 }
+@media screen and (max-width: 600px) {
+
+    .card-box2{
+        grid-row: span 2/auto;
+        text-align: center;
+        padding-left: 10px;
+    }
+    .cardbox3{
+        margin-top: -80px;
+    }
+    .card-box2  img{
+        border-radius: 50%;
+        height: 180px;
+        width: 180px;
+        margin: 0 0 10px 0;
+        overflow: hidden;
+    }
+    .card-wide{
+        height: 100px;
+    }
+.info{
+    padding-right: 20px;
+
+}
+.info2{
+    margin-left: 1rem;
+    padding-left: 3rem;
+}
+}
+
 .profile-menu{
     background-image: linear-gradient(to bottom, #3d56c8,#702cc8 );
     padding: 250px 0 220px 40px;
@@ -111,9 +141,11 @@ padding-top: 10px;
     height: 180px;
     width: 180px;
     margin: -100px 50px 10px -50px;
+    overflow: hidden;
 }
 .cardbox3{
     margin-top: -80px;
+    overflow: hidden;
 }
 .info{
     font-size: larger;
@@ -226,4 +258,22 @@ padding-top: 10px;
  border: 1px solid darkorchid;
  color:  darkorchid;
  background-color: white;
+}
+
+@media (max-width:480px){
+    .profile-menu{
+        display: none;
+    }
+    #card{
+        
+     
+      right: 7px;
+     
+      
+      
+    }
+
+
+
+
 }
